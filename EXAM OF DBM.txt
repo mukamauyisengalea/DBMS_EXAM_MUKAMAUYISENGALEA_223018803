@@ -1,0 +1,184 @@
+1.mysql> SELECT*FROM CLIENT_MASTER;
++----------+--------+----------+-----------+----------+---------+
+| clientNo | name   | address  | city      | state    | bal_due |
++----------+--------+----------+-----------+----------+---------+
+|        1 | Lea    | huye     | kigali    | RWANDA   |     500 |
+|        2 | DIVINE | NYANZE   | BUJUMBURA | BURUNDI  |     200 |
+|        3 | DIVINE | BUJA     | KAMPALA   | TANZANIA |     300 |
+|        4 | DELICE | VACUVA   | NAIROBI   | KENYA    |     600 |
+|        5 | BELISE | KIRUHURA | KAYONZA   | RWANDA   |     100 |
++----------+--------+----------+-----------+----------+---------+
+SECTIONB
+mysql> select*from DEPARTMENTS;
++-------------+----------+---------+-----------+-------------------+
+| EMPLOYEE_ID | F_name   | L_name  | Address   | EMAIL             |
++-------------+----------+---------+-----------+-------------------+
+|           1 | MUKAMA   | LEA     | HUYE      | lea@gmail.com     |
+|           2 | IYABANJE | REBECCA | nyanza    | rebecca@gmail.com |
+|           3 | ASHIMWE  | Belyse  | KAYONZA   | Belyse@gmail.com  |
+|           4 | GUHIRWA  | DIVINE  | NYARUGURU | DIVINE@gmail.com  |
+|           5 | SEZERANO | DELISE  | KICUKIRO  | Delise@gmail.com  |
++-------------+----------+---------+-----------+-------------------+
+5 rows in set (0.00 sec)
+ERROR 1146 (42S02): Table 'client_master.imployer' doesn't exist
+mysql> SELECT*FROM EMPLOYER;
++---------+----------+--------+-----------+
+| WORK_ID | F_NAME   | L_NAME | TEL       |
++---------+----------+--------+-----------+
+|       1 | MUKAMA   | LEA    | 789973745 |
+|       2 | GUHIRWA  | DIVINE | 722973745 |
+|       3 | SEZERANO | DELICE | 737473745 |
+|       4 | ASHIMWE  | BELISE | 737473700 |
+|       5 | ARAHARI  | BENUA  | 780073700 |
++---------+----------+--------+-----------+
+5 rows in set (0.00 sec)
+B)
+line 1
+mysql> DESC EMPLOYER;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| WORK_ID | int         | NO   | PRI | NULL    |       |
+| F_NAME  | varchar(50) | YES  |     | NULL    |       |
+| L_NAME  | varchar(50) | YES  |     | NULL    |       |
+| TEL     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+Q7)
+mysql> CREATE TABLE STUDENTS(student_id varchar(5),full_names varchar(25),gender varchar(6),age int(2),department varchar(30));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> insert into STUDENTS values(1,'MUKAMA LEA','GIRLS',20,'BIT');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into STUDENTS values(2,'IMURINDE DIVINE','GIRLS',20,'BIT');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into STUDENTS values(3,'TWIZEYE ONES','BOY',22,'ACC');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into STUDENTS values(4,'MUNEZERO ENOCK','BOY',24,'EC');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+mysql> insert into STUDENTS values(5,'UKUNDWA','BOY',19,'EC');
+Query OK, 1 row affected (0.00 sec)
+
+4.mysql> SELECT*FROM STUDENTS;
++------------+-----------------+--------+------+------------+
+| student_id | full_names      | gender | age  | department |
++------------+-----------------+--------+------+------------+
+| 1          | MUKAMA LEA      | GIRLS  |   20 | BIT        |
+| 2          | IMURINDE DIVINE | GIRLS  |   20 | BIT        |
+| 3          | TWIZEYE ONES    | BOY    |   22 | ACC        |
+| 4          | MUNEZERO ENOCK  | BOY    |   24 | EC         |
+| 5          | UKUNDWA         | BOY    |   19 | EC         |
++------------+-----------------+--------+------+------------+
+5 rows in set (0.00 sec)
+
+q8)
+mysql> select*from cutomer;
++-------------+---------+--------+----------------+-----------+------------------+
+| customer_id | f_name  | l_name | marital_status | phone_no  | email            |
++-------------+---------+--------+----------------+-----------+------------------+
+|           1 | MUKAMA  | lea    | single         | 789973743 | lea@gmail.com    |
+|           2 | GUHIRWA | DIVINE | MARRIED        | 789003743 | divine@gmail.com |
+|           3 | RUSINE  | ROSINE | MARRIED        | 789003700 | Rosine@gmail.com |
++-------------+---------+--------+----------------+-----------+------------------+
+3 rows in set (0.00 sec)
+
+Q10)
+mysql> SELECT*FROM SALES;
++---------+-------------+----------+--------------+------------+
+| sale_No | sales_names | branch   | sales_amaunt | DOB        |
++---------+-------------+----------+--------------+------------+
+|       1 | MUKAMA      | HUYE     |         8000 | 0000-00-00 |
+|       2 | IMURINDE    | NYANZA   |        35000 | 0000-00-00 |
+|       3 | NISHIMWE    | MUSANZE  |        55000 | 0000-00-00 |
+|       4 | ONESPHORE   | KICUKIRO |        55000 | 0000-00-00 |
+|       5 | NSENGIMANA  | GICUMBI  |        56000 | 0000-00-00 |
++---------+-------------+----------+--------------+------------+
+5 rows in set (0.00 sec)
+becouse shortage of time anather work is below
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 24
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE CLIENT_MASTER;
+Database changed
+mysql> CREATE TABLE EMPLOYERS(EMPLOYEE_ID INT PRIMARY KEY,FIRST_NAME VARCHAR(50),LAST_NAME VARCHAR(50),EMAIL VARCHAR(50),PHONE_NO INT,HIRE_Date Date,job_id int,commission_pct,manager_id int,department_id int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',manager_id int,department_id int)' at line 1
+mysql> CREATE TABLE EMPLOYERS(EMPLOYEE_ID INT PRIMARY KEY,FIRST_NAME VARCHAR(50),LAST_NAME VARCHAR(50),EMAIL VARCHAR(50),PHONE_NO INT,HIRE_Date Date,job_id int,commission_pct,manager_id int,department_id int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',manager_id int,department_id int)' at line 1
+mysql> create table cutomer(customer_id int,f_name varchar(50),l_name varchar(50),marital_status varchar(50),phone_no int,email varchar(50));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create table cutomer(1,'MUKAMA','lea','single',0789973743,'lea@gmail.com');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1,'MUKAMA','lea','single',0789973743,'lea@gmail.com')' at line 1
+mysql> insert into cutomer values(1,'MUKAMA','lea','single',0789973743,'lea@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into cutomer values(2,'GUHIRWA','DIVINE','MARRIED',0789003743,'divine@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into cutomer values(3,'RUSINE','ROSINE','MARRIED',0789003700,'Rosine@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select* from customer;
+ERROR 1146 (42S02): Table 'client_master.customer' doesn't exist
+mysql> select*from customer;
+ERROR 1146 (42S02): Table 'client_master.customer' doesn't exist
+mysql> select*from cutomer;
++-------------+---------+--------+----------------+-----------+------------------+
+| customer_id | f_name  | l_name | marital_status | phone_no  | email            |
++-------------+---------+--------+----------------+-----------+------------------+
+|           1 | MUKAMA  | lea    | single         | 789973743 | lea@gmail.com    |
+|           2 | GUHIRWA | DIVINE | MARRIED        | 789003743 | divine@gmail.com |
+|           3 | RUSINE  | ROSINE | MARRIED        | 789003700 | Rosine@gmail.com |
++-------------+---------+--------+----------------+-----------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> create table savings(saving_id int,amount int,date,customer_id foreign key reference cutomer);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',customer_id foreign key reference cutomer)' at line 1
+mysql> create table savings(saving_id int,amount int,date,customer_id foreign key reference customer_id from cutomer);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',customer_id foreign key reference customer_id from cutomer)' at line 1
+mysql> create table savings(saving_id int,amount int,date,customer_id);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',customer_id)' at line 1
+mysql> create table savings(saving_id int,amount int,date,customer_id int foreignkey from primary key in cutomer);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',customer_id int foreignkey from primary key in cutomer)' at line 1
+mysql> create table savings(saving_id int,amount int,date,customer_id from cutomer);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',customer_id from cutomer)' at line 1
+mysql> create table savings(saving_id int,amount int,date,customer_id foreign key reference cutomer);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',customer_id foreign key reference cutomer)' at line 1
+mysql> create table savings(saving_id int,amount int,date,customer_id int foreignkey from primary key in cutomer);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',customer_id int foreignkey from primary key in cutomer)' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create table savings(saving_id int,amount int,date,customer_id foreign key reference cutomer);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',customer_id foreign key reference cutomer)' at line 1
+mysql>
+
+
+
